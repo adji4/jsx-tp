@@ -1,45 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
-import React from "react";
 import { Card, Container } from "react-bootstrap";
-import Name from "./nameame";
-import Price from "./price";
-import Description from "./description";
-import Image from "./image";
+import Price from "./components/Price";
+import Description from "./components/Description";
+import Name from "./components/Name";
+import Image from "./components/Image";
 
-const firstName = "Anta"; 
+
 
 function App() {
+  const firstName = "Anta";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
 
-    <> 
-     <Container className="my-5 d-flex justify-content-center"></Container>
-     <Card style={{ width: "22rem", boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}>
-        <Card.Body className="text-center">
-          <Image />
-          <Card.Title><Name /></Card.Title>
-          <Price />
-          <Description />
-        </Card.Body>
-      </Card>
+      {/*carte du produit*/}
+      <Container className="my-5 d-flex justify-content-center">
+        <Card style={{ width: "22rem", boxShadow: "0 0 10px rgba(0,0,0,0.1)" }}>
+          <Card.Body className="text-center">
+            <Image  />
+            <Card.Title><Name /></Card.Title>
+            <Price />
+            <Description />
+          </Card.Body>
+        </Card>
+      </Container>
 
+      {/*Message de bienvenue*/}
       <div className="mt-4 text-center w-100">
         {firstName ? (
           <>
@@ -54,10 +38,13 @@ function App() {
           <h3>Bonjour !</h3>
         )}
       </div>
-       </> 
-       
-       );
+
+    </div>
   );
+
+
 }
+
+
 
 export default App;
